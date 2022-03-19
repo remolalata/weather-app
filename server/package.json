@@ -1,0 +1,19 @@
+{
+  "name": "weather-app-server",
+  "version": "1.0.0",
+  "description": "The server for the Weather App",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Remo Antonio Lalata",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
