@@ -7,3 +7,5 @@ export const DISPLAY_WEATHER_LABEL = 'Display Weather';
 export const BACK_LABEL = 'Back';
 
 export const SEARCH_CITY_PLACEHOLDER_LABEL = 'City';
+
+export const USER_GITHUB_LINK = 'https://github.com/%%profile_name%%';
