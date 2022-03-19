@@ -1,0 +1,12 @@
+@import '../../utils/variables.css';
+
+.weather_page .MuiTable-root thead {
+    background-color: var(--tableHeaderBg);
+}
+
+.weather__page--back-button-box {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: 50px;
+}

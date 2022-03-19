@@ -1,0 +1,29 @@
+@import '../../utils/variables.css';
+
+.header {
+    flex-grow: 1;
+}
+
+.header header {
+    padding: 20px;
+}
+
+.header .MuiSvgIcon-root {
+    font-size: 80px;
+    margin-right: 20px;
+}
+
+.header .MuiTypography-root {
+    font-weight: 700;
+    letter-spacing: 1px;
+    flex-grow: 1;
+}
+
+.header button {
+    color: var(--white);
+    border-color: var(--white);
+}
+
+.header button:hover {
+    border-color: var(--white);
+}
