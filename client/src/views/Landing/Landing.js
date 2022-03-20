@@ -22,7 +22,7 @@ const Landing = () => {
                 marginTop: '100px'
             }}
         >
-            <Box className='landing_page'>
+            <Box className='landing_screen'>
                 <Typography variant='h6' component='div'>{HOME_DESCRIPTION}</Typography>
                 <Button size='large' variant='contained' onClick={loginWithRedirect}>{LOGIN_LABEL}</Button>
             </Box>

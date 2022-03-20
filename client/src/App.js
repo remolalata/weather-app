@@ -17,8 +17,7 @@ import './App.css';
 
 const App = props => {
 
-  const { common, userData } = props;
-
+  const { common, userData, weather } = props;
   const {
     isAuthenticated,
     logout,
@@ -41,14 +40,20 @@ const App = props => {
   return (
     <>
       <Header onLogout={logout} userData={userData} />
-      {common.loading ? 
+      {common.loading ?
         <Box className='preloader'>
           <CircularProgress />
         </Box>
         :
         <>
           {validateObj(userData) ?
-            <Home />
+            <>
+              {validateObj(weather) ?
+                <Weather />
+                :
+                <Home />
+              }
+            </>
             :
             <Landing />
           }
@@ -60,7 +65,8 @@ const App = props => {
 
 const mapStateToProps = state => ({
   common: state.common,
-  userData: state.user
+  userData: state.user,
+  weather: state.weather
 });
 
 const mapDispatchToProps = dispatch => ({

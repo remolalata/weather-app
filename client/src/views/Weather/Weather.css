@@ -1,6 +1,6 @@
 @import '../../utils/variables.css';
 
-.weather_page .MuiTable-root thead {
+.weather_screen .MuiTable-root thead {
     background-color: var(--tableHeaderBg);
 }
 

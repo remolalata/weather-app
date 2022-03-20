@@ -1,7 +1,8 @@
-import { LOADING } from './common.types';
+import { LOADING, SET_ERROR } from './common.types';
 
 const INITIAL_STATE = {
-    loading: false
+    loading: false,
+    error: null
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -10,6 +11,11 @@ const reducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 loading: action.payload
+            }
+        case SET_ERROR:
+            return {
+                ...state,
+                error: action.payload
             }
         default: return state
     }
