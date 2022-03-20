@@ -1,0 +1,28 @@
+.home_screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home_screen .MuiLink-root {
+    margin-bottom: 100px;
+    display: block;
+}
+
+.home_screen .MuiAlert-root {
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+    .home_screen .MuiBox-root {
+        display: none;
+    }
+    .home_screen .search_box.MuiBox-root {
+        display: flex;
+    }
+
+    .home_screen .MuiAlert-root {
+        width: auto;
+    }
+}

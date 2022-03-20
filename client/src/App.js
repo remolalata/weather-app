@@ -1,25 +1,77 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Box, CircularProgress } from '@mui/material';
+import { useAuth0 } from '@auth0/auth0-react';
+
+import Header from './components/Header/Header';
+import Landing from './views/Landing/Landing';
+import Home from './views/Home/Home';
+import Weather from './views/Weather/Weather';
+
+import { setLoading } from './store/Common/common.action';
+import { setUserData } from './store/Auth/auth.action';
+
+import { validateObj } from './utils/utils';
+
 import './App.css';
 
-function App() {
+const App = props => {
+
+  const { common, userData, weather } = props;
+  const {
+    isAuthenticated,
+    logout,
+    isLoading,
+    user
+  } = useAuth0();
+
+  useEffect(() => {
+    props.setLoading(isLoading);
+  }, [isLoading]);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      props.setUserData(user);
+    } else {
+      props.setUserData({});
+    }
+  }, [isAuthenticated]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.s
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={isAuthenticated ? 'authenticated' : ''}>
+      <Header onLogout={logout} userData={userData} />
+      {common.loading ?
+        <Box className='preloader'>
+          <CircularProgress />
+        </Box>
+        :
+        <>
+          {validateObj(userData) ?
+            <>
+              {validateObj(weather) ?
+                <Weather />
+                :
+                <Home />
+              }
+            </>
+            :
+            <Landing />
+          }
+        </>
+      }
     </div>
   );
-}
+};
 
-export default App;
+const mapStateToProps = state => ({
+  common: state.common,
+  userData: state.user,
+  weather: state.weather
+});
+
+const mapDispatchToProps = dispatch => ({
+  setLoading: data => dispatch(setLoading(data)),
+  setUserData: data => dispatch(setUserData(data))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
