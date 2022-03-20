@@ -10,3 +10,31 @@
     justify-content: flex-end;
     margin-top: 50px;
 }
+
+@media (max-width: 480px) {
+    .weather_screen .MuiTable-root th, 
+    .weather_screen .MuiTable-root .MuiTableCell-root {
+        display: none;
+    }
+
+    .weather_screen .MuiTable-root th:first-child,
+    .weather_screen .MuiTable-root th:nth-child(2),
+    .weather_screen .MuiTable-root td:first-child,
+    .weather_screen .MuiTable-root td:nth-child(2) {
+        display: inline-block;
+    }
+
+    .weather_screen .MuiTable-root tr {
+        display: flex;
+    }
+
+    .weather_screen .MuiTable-root th:first-child,
+    .weather_screen .MuiTable-root td:first-child {
+        flex-grow: 1;
+    }
+    
+    .weather_screen .MuiTable-root th:nth-child(2),
+    .weather_screen .MuiTable-root td:nth-child(2) {
+        width: 30%;
+    }
+}

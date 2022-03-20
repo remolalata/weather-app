@@ -1,29 +1,44 @@
-@import '../../utils/variables.css';
+@import "../../utils/variables.css";
 
 .header {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .header header {
-    padding: 20px;
+  padding: 20px;
 }
 
 .header .MuiSvgIcon-root {
-    font-size: 80px;
-    margin-right: 20px;
+  font-size: 80px;
+  margin-right: 20px;
 }
 
 .header .MuiTypography-root {
-    font-weight: 700;
-    letter-spacing: 1px;
-    flex-grow: 1;
+  font-weight: 700;
+  letter-spacing: 1px;
+  flex-grow: 1;
 }
 
 .header button {
-    color: var(--white);
-    border-color: var(--white);
+  color: var(--white);
+  border-color: var(--white);
 }
 
 .header button:hover {
-    border-color: var(--white);
+  border-color: var(--white);
+}
+
+@media (max-width: 480px) {
+  .header header {
+    padding: 5px;
+  }
+
+  .header .MuiSvgIcon-root {
+    font-size: 50px;
+    margin-right: 10px;
+  }
+
+  .header .MuiTypography-root {
+      font-size: 1.3rem;
+  }
 }

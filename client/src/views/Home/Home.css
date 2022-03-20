@@ -13,3 +13,16 @@
     width: 400px;
     margin-bottom: 20px;
 }
+
+@media (max-width: 480px) {
+    .home_screen .MuiBox-root {
+        display: none;
+    }
+    .home_screen .search_box.MuiBox-root {
+        display: flex;
+    }
+
+    .home_screen .MuiAlert-root {
+        width: auto;
+    }
+}

@@ -7,10 +7,10 @@ import {
 } from '@mui/material';
 import { Cloud } from '@mui/icons-material';
 
-import './Header.css';
-
 import { validateObj } from '../../utils/utils';
 import { MAIN_HEADER, LOGOUT_LABEL } from '../../utils/constants';
+
+import './Header.css';
 
 const Header = props => {
     const title = props.title ? props.title : MAIN_HEADER;

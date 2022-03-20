@@ -12,3 +12,9 @@
 .search_box .MuiButton-root {
     margin-top: 30px;
 }
+
+@media (max-width: 480px) {
+    .search_box form {
+        width: auto;
+    }
+  }

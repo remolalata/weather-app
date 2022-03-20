@@ -38,7 +38,7 @@ const App = props => {
   }, [isAuthenticated]);
 
   return (
-    <>
+    <div className={isAuthenticated ? 'authenticated' : ''}>
       <Header onLogout={logout} userData={userData} />
       {common.loading ?
         <Box className='preloader'>
@@ -59,7 +59,7 @@ const App = props => {
           }
         </>
       }
-    </>
+    </div>
   );
 };
 

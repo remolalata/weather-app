@@ -25,3 +25,22 @@ html, body {
 .MuiLink-root {
     cursor: pointer;
 }
+
+.authenticated header .MuiTypography-root {
+    display: none;
+}
+
+.authenticated .header .MuiToolbar-root.MuiToolbar-gutters {
+    justify-content: space-between;
+}
+
+@media (max-width: 480px) {
+    .MuiTypography-root.MuiTypography-h6 {
+        font-size: 1rem;
+    }
+
+    .MuiButton-root.MuiButtonBase-root {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+  }
