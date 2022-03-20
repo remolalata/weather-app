@@ -1,3 +1,5 @@
+import React from 'react';
+import { connect } from 'react-redux';
 import { Box, CircularProgress } from '@mui/material';
 import { useAuth0 } from '@auth0/auth0-react';
 
@@ -35,4 +37,9 @@ const App = () => {
   );
 };
 
-export default App;
+const mapStateToProps = state => ({
+  common: state.common,
+  user: state.user
+})
+
+export default connect(mapStateToProps, null)(App);
