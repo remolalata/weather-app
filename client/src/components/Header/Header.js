@@ -9,6 +9,7 @@ import { Cloud } from '@mui/icons-material';
 
 import './Header.css';
 
+import { validateObj } from '../../utils/utils';
 import { MAIN_HEADER, LOGOUT_LABEL } from '../../utils/constants';
 
 const Header = props => {
@@ -20,7 +21,7 @@ const Header = props => {
                 <Toolbar>
                     <Cloud />
                     <Typography variant="h4" component="div">{title}</Typography>
-                    <Button size='large' variant='outlined' onClick={props.onLogout}>{LOGOUT_LABEL}</Button>
+                    {validateObj(props.userData) && <Button size='large' variant='outlined' onClick={props.onLogout}>{LOGOUT_LABEL}</Button>}
                 </Toolbar>
             </AppBar>
         </Box>

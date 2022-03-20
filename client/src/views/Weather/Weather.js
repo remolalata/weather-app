@@ -15,7 +15,7 @@ import './Weather.css';
 
 import { BACK_LABEL } from '../../utils/constants';
 
-const Landing = () => {
+const Weather = () => {
 
     return (
         <Container
@@ -58,4 +58,4 @@ const Landing = () => {
     );
 };
 
-export default Landing;
+export default Weather;

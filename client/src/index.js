@@ -7,14 +7,16 @@ import { Provider } from 'react-redux';
 import store from './store/';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Auth0Provider
-      domain="dev-3qpvycxq.us.auth0.com"
-      clientId="EjlfLJEFiBAhmCmuSZMPxqe1o3OqjhBH"
-      redirectUri={'http://localhost:3000/'}
-    >
-      <App />
-    </Auth0Provider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <Auth0Provider
+        domain={process.env.REACT_APP_AUTH0_DOMAN}
+        clientId={process.env.REACT_APP_AUTH0_CLIENT_ID}
+        redirectUri={window.location.origin}
+      >
+        <App />
+      </Auth0Provider>
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
