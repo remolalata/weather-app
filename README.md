@@ -3,6 +3,8 @@ The [Client Folder](/client) contains a basic create-react-app starter file.
 
 The [Server Folder](server) contains a basic MVC folder structure for creating an api using Node and Express.
 
+Environment variable is intentionally added for this project for development testing
+
 ## Commands that can be run from this root folder:
 
 `npm install` - Installs all packages specified in the package.json file for both the client and server.
