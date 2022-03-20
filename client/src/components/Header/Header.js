@@ -20,7 +20,7 @@ const Header = props => {
                 <Toolbar>
                     <Cloud />
                     <Typography variant="h4" component="div">{title}</Typography>
-                    <Button size='large' variant='outlined'>{LOGOUT_LABEL}</Button>
+                    <Button size='large' variant='outlined' onClick={props.onLogout}>{LOGOUT_LABEL}</Button>
                 </Toolbar>
             </AppBar>
         </Box>
